@@ -7,10 +7,8 @@ import Total from './components/Total';
 
 import { connect } from 'react-redux';
 
-const App = () => {
-  const state = {
-    
-  };
+const App = (props) => {
+  const {} = props;
 
   return (
     <div className="boxes">
