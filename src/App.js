@@ -9,7 +9,8 @@ import { connect } from 'react-redux';
 import { removeFeature, buyFeature } from './actions';
 
 const App = (props) => {
-  const { state, removeFeature, buyFeature } = props;
+  console.log(props)
+  const { state, buyFeature, removeFeature } = props; // what is going on here?
 
   return (
     <div className="boxes">
@@ -18,7 +19,7 @@ const App = (props) => {
         <AddedFeatures car={state.car} removeFeature={removeFeature} />
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={state.additionalFeatures} buyFeature={buyFeature} />
+        <AdditionalFeatures store={state.store} buyFeature={buyFeature} />
         <Total car={state.car} additionalPrice={state.additionalPrice} />
       </div>
     </div>
@@ -31,4 +32,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { removeFeature, buyFeature })(App);
+export default connect(mapStateToProps, { buyFeature, removeFeature })(App);
