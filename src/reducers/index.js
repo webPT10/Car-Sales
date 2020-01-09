@@ -19,7 +19,16 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type){
-
+    case BUY_FEATURE:
+        return {
+            ...state,
+            car: {
+                ...state.car,
+                price: state.car.price + action.payload.price,
+                features: [...state.car.features, action.payload] //what is going on here?
+            }
+        }
+    
     default:
         return state;
     }
