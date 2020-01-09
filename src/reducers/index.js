@@ -1,3 +1,4 @@
+import { REMOVE_FEATURE, BUY_FEATURE } from "../actions";
 
 const initialState = {
     additionalPrice: 0,
@@ -18,7 +19,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type){
-    
+
     default:
         return state;
     }
